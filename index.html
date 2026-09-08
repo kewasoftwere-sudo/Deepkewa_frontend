@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepKewa Labs | WE BUILD • YOU GROW • TOGETHER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#030712',
+                        cardBg: '#111827/90',
+                        accentBlue: '#3b82f6',
+                        accentCyan: '#06b6d4'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Parallax Moving Background Photo Effect */
+        #parallaxBg {
+            background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200'); /* Default fallback */
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black relative overflow-x-hidden">
+
+    <!-- Moving Background Photo with Overlay -->
+    <div id="parallaxBg" class="fixed inset-0 -z-20 opacity-15 filter blur-sm scale-105 pointer-events-none transition-transform duration-700"></div>
+    <div class="fixed inset-0 -z-10 bg-gradient-to-b from-darkBg/80 via-darkBg/95 to-darkBg pointer-events-none"></div>
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-gray-800/80 bg-darkBg/70 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">DEEPKEWA</span>
+                    <span class="text-xs block text-cyan-400 font-semibold tracking-widest">LABS</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+                <a href="#founder" class="hover:text-cyan-400 transition">Founder</a>
+                <a href="admin.html" class="text-cyan-400 hover:text-cyan-300 transition flex items-center gap-1.5"><i class="fa-solid fa-lock text-xs"></i> Admin Portal</a>
+            </nav>
+            <a href="admin.html" class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 transition">Admin Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center flex-grow">
+        <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+            <div class="w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+            <div class="w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-6 uppercase tracking-widest">
+            WE BUILD • YOU GROW • TOGETHER
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+            Architecting The Future of <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Digital Enterprise</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10">
+            We engineer high-performance software, cloud architectures, and futuristic web platforms designed to scale your business exponentially.
+        </p>
+
+        <!-- Founder Profile Card (Click to Zoom Photo) -->
+        <div id="founder" class="max-w-xl mx-auto bg-cardBg border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md flex flex-col sm:flex-row items-center gap-6 mb-16 text-left">
+            <div class="relative group cursor-pointer" onclick="openImageViewer(currentFounderImg, 'Founder - Deepak')">
+                <img id="founderImgTag" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400" alt="Founder" class="w-28 h-28 rounded-2xl object-cover border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10 group-hover:scale-105 transition duration-300">
+                <div class="absolute inset-0 bg-black/40 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-cyan-400 text-xs font-semibold gap-1">
+                    <i class="fa-solid fa-expand"></i> Tap
+                </div>
+            </div>
+            <div>
+                <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Visionary & Founder</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Deepak</h3>
+                <p class="text-sm text-gray-400 mt-2">Leading technological innovations, full-stack systems engineering, and futuristic digital transformations at DeepKewa Labs.</p>
+            </div>
+        </div>
+
+        <!-- Live Uploaded Projects Grid -->
+        <div id="projects" class="mt-20 text-left">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Live Innovations & Projects</h2>
+                <button onclick="fetchSiteData()" class="text-xs text-cyan-400 hover:underline flex items-center gap-1"><i class="fa-solid fa-rotate"></i> Refresh</button>
+            </div>
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 text-center text-gray-500 col-span-full py-12">
+                    Loading projects from Firebase cloud...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Image / Zoom Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-50 flex flex-col items-center justify-center p-4">
+        <button onclick="closeImageViewer()" class="absolute top-6 left-6 bg-gray-800/80 border border-gray-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-cyan-500 hover:text-black transition flex items-center gap-2 shadow-xl">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <div class="max-w-3xl w-full text-center">
+            <img id="modalImage" src="" alt="Zoomed View" class="max-h-[75vh] mx-auto rounded-2xl border border-cyan-500/40 shadow-2xl object-contain mb-4">
+            <p id="modalCaption" class="text-cyan-400 font-medium text-sm tracking-wide"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 bg-darkBg/90 py-12 px-4 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 DeepKewa Labs. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <button onclick="openModal('privacyModal')" class="hover:text-cyan-400 transition">Privacy Policy</button>
+                <button onclick="openModal('termsModal')" class="hover:text-cyan-400 transition">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-cardBg border border-gray-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('privacyModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="text-2xl font-bold text-white mb-4">Privacy Policy</h3>
+            <p class="text-sm text-gray-300 space-y-3 leading-relaxed">
+                At DeepKewa Labs, we take your privacy seriously. This policy outlines how we handle your data across our cloud infrastructure and public platforms. All data transmitted through our admin dashboards and APIs is encrypted using secure SSL protocols and stored securely in Firebase Firestore databases. We never share or sell user information to third parties. For any privacy-related queries, reach out directly via our official platform channels.
+            </p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-cardBg border border-gray-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="text-2xl font-bold text-white mb-4">Terms of Service</h3>
+            <p class="text-sm text-gray-300 space-y-3 leading-relaxed">
+                By accessing and using DeepKewa Labs platforms, you agree to comply with and be bound by these terms. Our software solutions, digital assets, and codebases are protected under standard intellectual property laws. Unauthorized duplication, reverse engineering, or malicious disruption of our Render backend APIs and Vercel deployments is strictly prohibited. DeepKewa Labs reserves the right to modify these terms at any time without prior notice.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const BACKEND_URL = "https://deepkewa-backend.onrender.com";
+        let currentFounderImg = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800";
+
+        // Parallax Scroll Effect for Background Photo
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const bg = document.getElementById('parallaxBg');
+            bg.style.transform = `translateY(${scrollY * 0.25}px) scale(1.05)`;
+        });
+
+        async function fetchSiteData() {
+            const grid = document.getElementById('projectsGrid');
+            try {
+                // Fetch Projects & Settings from Backend
+                const res = await fetch(`${BACKEND_URL}/api/projects`);
+                const result = await res.json();
+                
+                // If backend supports settings/background photo API, fetch it or use default
+                // Simulating setting background image dynamically if configured
+                if(result.success && result.data.length > 0) {
+                    grid.innerHTML = result.data.map(p => `
+                        <div class="bg-cardBg border border-gray-800 rounded-3xl p-6 flex flex-col justify-between hover:border-cyan-500/40 transition shadow-xl backdrop-blur-md">
+                            <div>
+                                <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold uppercase tracking-wider">${p.category}</span>
+                                <h3 class="text-xl font-bold text-white mt-4">${p.title}</h3>
+                                <p class="text-sm text-gray-400 mt-2">${p.description}</p>
+                            </div>
+                            <div class="mt-6">
+                                ${p.projectUrl ? `<a href="${p.projectUrl}" target="_blank" class="block w-full py-2.5 px-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-semibold text-xs text-center transition mb-4 flex items-center justify-center gap-2"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo / View Project</a>` : ''}
+                                <div class="pt-4 border-t border-gray-800/80 flex justify-between items-center text-xs text-gray-500">
+                                    <span><i class="fa-solid fa-code text-cyan-400 mr-1"></i> ${p.techStack}</span>
+                                    <span>${p.date}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    grid.innerHTML = `<div class="p-6 rounded-2xl bg-cardBg border border-gray-800 text-center text-gray-500 col-span-full py-12">No active projects found. Upload from admin panel!</div>`;
+                }
+            } catch (err) {
+                grid.innerHTML = `<div class="p-6 rounded-2xl bg-cardBg border border-red-500/20 text-center text-red-400 col-span-full py-12">Failed to connect to Render Backend API.</div>`;
+            }
+        }
+
+        // Image Zoom-in Modal Functions
+        function openImageViewer(imgSrc, captionText) {
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('modalCaption').innerText = captionText;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeImageViewer() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+        fetchSiteData();
+    </script>
+</body>
+</html>
